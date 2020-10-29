@@ -1,7 +1,7 @@
-# Dio Dino Game 
-Dino game for Digital Innovation One Lesson, using only JS, HTML and CSS
+# Jogo do Dinossauro 
+
+O Jogo do Dinossauro no navegador Google Chrome, encontra-se na página de erro quando não temos Internet. Este jogo é uma adaptação, tendo a versão clássica e a minha versão.
 
 ![screenshot](example.png?raw=true "screenshot")
 
-# License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Link: [Jogo do Dinossauro](https://dinossauro.netlify.app/)

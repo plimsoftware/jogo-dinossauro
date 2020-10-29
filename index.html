@@ -3,20 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no">
-  <title>Dio Dino Game</title>
+  <title>Jogo do Dinossauro</title>
   <link rel="stylesheet" href="style.css"></link>
-  <link rel="manifest" href="manifest.json">
-  <script src="script.js" charset="UTF-8" defer></script>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="manifest" href="./manifest.json">
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="./img/icons/icon-72x72.png" />
+  <link rel="apple-touch-icon" href="./img/icons/icon-96x96.png" />
+  <link rel="apple-touch-icon" href="./img/icons/icon-128x128.png" />
+  <link rel="apple-touch-icon" href="./img/icons/icon-144x144.png" />
+  <link rel="apple-touch-icon" href="./img/icons/icon-152x152.png" />
+  <link rel="apple-touch-icon" href="./img/icons/icon-192x192.png" />
+  <link rel="apple-touch-icon" href="./img/icons/icon-384x384.png" />
+  <link rel="apple-touch-icon" href="./img/icons/icon-512x512.png" />
+  <meta name="apple-mobile-web-app-status-bar" content="#4181e0" />
+  <meta name="theme-color" content="#4181e0" />
+  <script src="./script.js" charset="UTF-8" defer></script>
 </head>
 <body>
-  <div class="menu">
-    <button type="button">Clássico</button>
-    <button type="button">Minha Versão</button>
+  <div id="warning-message">
+    <img src="./logo.png" alt="Jogo do Dinissauro" />
+    Para uma melhor experiência neste jogo, coloque o seu telemóvel no modo landscape. Obrigado!
   </div>
-  <div class="container">
-    <div class="background">
-      <div class="dino"></div>
+  <div id="wrapper">
+    <div class="logo">
+      Feito por: Luís Fernandes 
+      <img src="./logo.png" alt="Jogo do Dinissauro" />
+      <a href="https://www.plimsoftware.pt">www.plimsoftware.pt</a>
+    </div>
+    <div class="menu">
+      <span><button id="classic" type="button">Clássico</button>
+      <button id="mario" type="button">Minha Versão</button></span>
+      <span><button id="GO" type="button">Partida!!</button></span>
+    </div>
+    <div class="container">
+      <div class="background">
+        <div class="dino"></div>
+      </div>
     </div>
   </div>
+  <div id="game-over">
+    <img src="./logo.png" alt="Jogo do Dinissauro" />
+    Fim do Jogo!
+    <button id="begin" type="button">Recomeçar</button>
+  </div>
+  <script src="./serviceWorker.js"></script>
 </body>
 </html>

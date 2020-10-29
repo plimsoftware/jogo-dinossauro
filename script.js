@@ -1,9 +1,17 @@
 const dino = document.querySelector('.dino');
 const background = document.querySelector('.background');
+const go = document.getElementById('GO');
+const gameOver = document.getElementById('game-over');
+const game = document.getElementById('wrapper');
+const begin = document.getElementById('begin');
+const classic = document.getElementById('classic');
+const mario = document.getElementById('mario');
+
 
 let isJumping = false;
 let isGameOver = false;
 let position = 130;
+let theme = 'classic';
 
 function handleKeyUp(event) {
     if (!isJumping) {
@@ -36,6 +44,27 @@ function jump() {
   }, 20);
 }
 
+function start (){
+  createCactus();
+  go.removeEventListener('click', start);
+}
+
+function restart (){
+  window.location.reload();
+}
+
+function setMario (){
+  background.style.backgroundImage = "url('backgroundmario.png')";
+  dino.style.backgroundImage = "url('mario.png')";
+  theme = 'mario';
+}
+
+function setClassic (){
+  background.style.backgroundImage = "url('background.png')";
+  dino.style.backgroundImage = "url('dino.png')";
+  theme = 'classic';
+}
+
 function createCactus() {
   const cactus = document.createElement('div');
   let cactusPosition = 650;
@@ -44,6 +73,11 @@ function createCactus() {
   if (isGameOver) return;
 
   cactus.classList.add('cactus');
+  if (theme === 'mario') {
+    cactus.style.backgroundImage = "url('badguy.png')";
+  } else {
+    cactus.style.backgroundImage = "url('cactus.png')";
+  }
   background.appendChild(cactus);
   cactus.style.left = cactusPosition + 'px';
 
@@ -56,7 +90,8 @@ function createCactus() {
       // Game over
       clearInterval(leftTimer);
       isGameOver = true;
-      document.body.innerHTML = '<h1 class="game-over">Fim de jogo</h1>';
+      wrapper.style.display = 'none';
+      gameOver.style.display = 'flex';
     } else {
       cactusPosition -= 10;
       cactus.style.left = cactusPosition + 'px';
@@ -66,6 +101,9 @@ function createCactus() {
   setTimeout(createCactus, randomTime);
 }
 
-createCactus();
 document.addEventListener('keydown', handleKeyUp);
 background.addEventListener('click', handleKeyUp);
+go.addEventListener('click', start);
+begin.addEventListener('click', restart);
+classic.addEventListener('click', setClassic);
+mario.addEventListener('click', setMario);
